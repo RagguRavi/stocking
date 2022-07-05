@@ -1,2 +1,15 @@
 <h1>Stocking</h1>
 <p>Hey this is my first rails project</p>
+
+
+<%if @stock %>
+  <%= @stock.inspect %>
+<% else%>
+  <%=@nothing%>
+<% end %>
+
+<%= form_with url: root_path, method: :post do |form| %>
+  <%= form.label :query, "Search for:" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search" %>
+<% end %>
